@@ -1,23 +1,23 @@
 import React from 'react';
 
 // with props, 'this' refers to the actual component, props is an object with attributes that we can access; can use this.props anywhere inside the render method and it will be made available
-class Header extends React.Component {
-  render() {
-    console.log(this);
-    return (
-      <header className="top">
-        <h1>
-          Catch
-          <span className="ofThe">
-            <span className="of">of</span>
-            <span className="the">the</span>
-          </span>
-          Day
-        </h1>
-        <h3 className="tagline"><span>{this.props.tagline}</span></h3>
-      </header>
-    )
-  }
+// if you're just rendering HTML, and don't require any other methods/functions besides render, it doesn't need to be a whole class, can instead be a variable function
+// can remove 'this.' from props once it's not bound to any class/object anymore and props are being passed in directly
+
+const Header = (props) => {
+  return (
+    <header className="top">
+    <h1>
+    Catch
+    <span className="ofThe">
+    <span className="of">of</span>
+    <span className="the">the</span>
+    </span>
+    Day
+    </h1>
+    <h3 className="tagline"><span>{props.tagline}</span></h3>
+    </header>
+  )
 }
 
 export default Header;
