@@ -10,6 +10,7 @@ import NotFound from './components/NotFound';
 
 const Root = () => {
   // you can put Matches anywhere in your application, even 4-5 levels deep
+  // because this BrowserRouter is the parent of absolutely everything in our whole application, it actually is possible to surface React Router at any component down through it 
   return (
     <BrowserRouter>
       <div>

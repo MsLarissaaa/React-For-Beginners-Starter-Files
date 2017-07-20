@@ -11,8 +11,10 @@ class StorePicker extends React.Component {
   goToStore(event) {
     event.preventDefault();
     // first grab the text from the box
-    console.log(this.storeInput.value);
+    const storeId = this.storeInput.value;
+    console.log(`Going to ${storeId}`);
     // second we're going to transition from / to /store/:storeId
+    this.context.router.transitionTo(`/store/${storeId}`);
   }
   // ES6 class functions do NOT have commas after them
   render() {
@@ -27,6 +29,11 @@ class StorePicker extends React.Component {
     )
     // You can only ever return one parent element in JSX, and you have to self-close your tags
   }
+}
+
+// surface the router from the parent with contextTypes
+StorePicker.contextTypes = {
+  router: React.PropTypes.object
 }
 
 export default StorePicker;
