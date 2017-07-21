@@ -2,12 +2,14 @@ import React from 'react';
 import Header from './Header';
 import Order from './Order';
 import Inventory from './Inventory';
+import sampleFishes from '../sample-fishes';
 
 // analogous to HTML tags, you pass information to component tags via props; can name props whatever you want
 class App extends React.Component {
   constructor() {
     super();
     this.addFish = this.addFish.bind(this);
+    this.loadSamples = this.loadSamples.bind(this);
     // get initial state
     this.state = {
       fishes: {},
@@ -26,6 +28,12 @@ class App extends React.Component {
     // ^same as this.setState({ fishes: fishes}) - ??? ES6
   }
 
+  loadSamples() {
+    this.setState({
+      fishes: sampleFishes
+    });
+  }
+
   render() {
     return (
       <div className="catch-of-the-day">
@@ -33,7 +41,7 @@ class App extends React.Component {
           <Header tagline="Fresh Seafood Market"/>
         </div>
         <Order />
-        <Inventory addFish={this.addFish} />
+        <Inventory addFish={this.addFish} loadSamples={this.loadSamples} />
       </div>
     )
   }
