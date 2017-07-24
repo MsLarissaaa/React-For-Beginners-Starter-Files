@@ -4,6 +4,7 @@ import Order from './Order';
 import Inventory from './Inventory';
 import Fish from './Fish';
 import sampleFishes from '../sample-fishes';
+import base from '../base';
 
 // analogous to HTML tags, you pass information to component tags via props; can name props whatever you want
 class App extends React.Component {
