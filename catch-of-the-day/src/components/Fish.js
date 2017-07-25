@@ -25,4 +25,10 @@ class Fish extends React.Component {
 
 // Sea Scallops by default are sold out, the rest are available/'Add to Order'
 
+Fish.propTypes = {
+  details: React.PropTypes.object.isRequired,
+  index: React.PropTypes.string.isRequired,
+  addToOrder: React.PropTypes.func.isRequired
+}
+
 export default Fish;

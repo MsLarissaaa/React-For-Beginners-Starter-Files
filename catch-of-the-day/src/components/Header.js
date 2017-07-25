@@ -20,4 +20,9 @@ const Header = (props) => {
   )
 }
 
+// Warnings regarding invalid prop types are only in development - won't see them if you push to production
+Header.propTypes = {
+  tagline: React.PropTypes.string.isRequired
+}
+
 export default Header;

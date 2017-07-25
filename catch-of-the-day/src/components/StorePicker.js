@@ -31,7 +31,7 @@ class StorePicker extends React.Component {
   }
 }
 
-// surface the router from the parent with contextTypes
+// surface the router from the parent with contextTypes to allow us to use transitionTo
 StorePicker.contextTypes = {
   router: React.PropTypes.object
 }
