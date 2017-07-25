@@ -20,6 +20,19 @@ class App extends React.Component {
     };
   }
 
+// check the react component specs for the different possible components you want to hook into
+  componentWillMount() {
+    this.ref = base.syncState(`${this.props.params.storeId}/fishes`,
+     {
+       context: this,
+       state: 'fishes'
+     });
+  }
+
+  componentWillUnmount() {
+    base.removeBinding(this.ref);
+  }
+
   addFish(fish) {
     // update our state
     const fishes = {...this.state.fishes};
